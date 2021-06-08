@@ -11,6 +11,6 @@ class SignupController extends Controller
     }
 
     public function validation(Request $req){
-        //todo
+        
     }
 }

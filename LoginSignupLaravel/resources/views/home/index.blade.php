@@ -7,6 +7,9 @@
     <title>Dashboard</title>
 </head>
 <body>
+    <h1>Welcome, {{$fullname}}</h1>
+        <a href=""> Create New </a> |
+        <a href="/logout"> Logout </a> 
     <table border="2">
         <tr>
             <th>ID</th>
@@ -15,7 +18,7 @@
             <th>Email</th>
             <th>Options</th>
         </tr>
-        @foreach ($userList as $user) 
+        @foreach ($userList as $user)
         <tr>
             <td>{{$user['id']}}</td>
             <td>{{$user['fullname']}}</td>

@@ -15,7 +15,7 @@
 		</tr>
         <tr>
 			<td>Full Name</td>
-			<td><input type="text" name="full-name"></td>
+			<td><input type="text" name="fullname"></td>
 		</tr>
 		<tr>
 			<td>User Name</td>
@@ -23,11 +23,11 @@
 		</tr>
 		<tr>
 			<td>Password</td>
-			<td><input type="password" name="password"></td>
+			<td><input type="password" name="pass"></td>
 		</tr>
         <tr>
 			<td>Confirm Password</td>
-			<td><input type="password" name="confirm-password"></td>
+			<td><input type="password" name="confirmpass"></td>
 		</tr>
 		<tr>
 			<td></td>
