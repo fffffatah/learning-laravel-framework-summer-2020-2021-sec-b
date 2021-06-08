@@ -10,7 +10,7 @@ class SignupController extends Controller
         return view('signup.index');
     }
 
-    public function validate(Request $req){
+    public function validation(Request $req){
         //todo
     }
 }

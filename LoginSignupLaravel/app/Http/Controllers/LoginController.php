@@ -10,7 +10,7 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    public function validate(Request $req){
+    public function validation(Request $req){
         //todo
     }
 }

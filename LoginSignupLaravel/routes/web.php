@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SignupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +14,13 @@ use App\Http\Controllers\SignupController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/signup', [SignupController::class, 'index']);
+Route::get('/login', 'LoginController@index');
+Route::get('/signup', 'SignupController@index');
 
-Route::post('/login', [LoginController::class, 'validate']);
-Route::post('/signup', [SignupController::class, 'validate']);
+Route::post('/login', 'LoginController@validation');
+Route::post('/signup', 'SignupController@validation');
 
-//Route::get('/login', 'LoginController@index');
-//Route::get('/signup', 'SignupController@index');
+Route::get('/logout', 'LogoutController@index');
