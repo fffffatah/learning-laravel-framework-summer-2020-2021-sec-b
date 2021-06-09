@@ -7,6 +7,7 @@
     <title>Login</title>
 </head>
 <body>
+	<form action="post">
 	<table>
         <tr>
 			<td>Name</td>
