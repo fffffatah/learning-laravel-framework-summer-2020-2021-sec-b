@@ -11,7 +11,6 @@ class LoginController extends Controller
     }
 
     public function verify(Request $req){
-       
         if($req->uname == $req->password){
             return redirect('/home');
         }
