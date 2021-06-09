@@ -22,7 +22,7 @@ class UserController extends Controller
     }
 
     public function details($id){
-        $user = findUser($id);
+        $user = $this->findUser($id);
         return view('user.details')->with('user', $user);
     }
 
@@ -38,35 +38,41 @@ class UserController extends Controller
     }
 
     public function edit($id){
-        $user = findUser($id);
+        $user = $this->findUser($id);
         return view('user.edit')->with('user', $user);
     }
 
     public function update(Request $req, $id){
         $users = $this->getUserList();
         $user = ['id'=>$req->id, 'name'=>$req->uname, 'email'=>$req->email];
-        array_push($users, $user);
+        for($i = 0; $i<sizeof($users); $i++){
+            if($users[$i]['id'] == $id){
+                $users[$i] = $user;
+            }
+        }
         return view('user.list')->with('userList', $users);
     }
 
     public function delete( $id){
-        //confirm window
-        //find user by id $user
-
+        $user = $this->findUser($id);
         return view('user.delete')->with('user', $user);
     }
 
     public function destroy($id){
-        //remove user form list
-        //create new list & display
-
+        $users = $this->getUserList();
+        for($i = 0; $i<sizeof($users); $i++){
+            if($users[$i]['id'] == $id){
+                unset($users[$i]);
+                break;
+            }
+        }
         return view('user.list')->with('userList', $users);
     }
 
 
     public function getUserList(){
         return [
-            ['id'=>1, 'name'=>'almain', 'email'=>'email@email.com'],
+            ['id'=>1, 'name'=>'noorullah', 'email'=>'email@email.com'],
             ['id'=>2, 'name'=>'abc', 'email'=>'abc@email.com'],
             ['id'=>3, 'name'=>'xyz', 'email'=>'xyz@email.com']
         ];
