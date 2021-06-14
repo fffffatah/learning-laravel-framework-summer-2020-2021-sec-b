@@ -22,5 +22,6 @@
 	</table>
 	</form>
 	<a href="/signup"> Signup</a>
+	{{session('msg')}}
 </body>
 </html>
