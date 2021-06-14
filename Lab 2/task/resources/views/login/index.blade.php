@@ -5,6 +5,7 @@
 </head>
 <body>
 	<form method="post">
+	@csrf
 	<table>
 		<tr>
 			<td>Name</td>
@@ -20,5 +21,6 @@
 		</tr>
 	</table>
 	</form>
+	{{session('msg')}}
 </body>
 </html>
